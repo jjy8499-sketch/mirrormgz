@@ -13,13 +13,6 @@
       padding: 0;
     }
 
-    header {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -41,81 +34,79 @@
       font-size: 1.2rem;
     }
 
-    iframe {
+    .pdf-container {
       width: 100%;
-      height: 420px;
-      border: none;
+      height: 400px; /* 섹션 안에서 PDF 스크롤 영역 높이 */
+      overflow: auto;
       border-radius: 8px;
+      border: 1px solid #ccc;
     }
 
-    .open-btn {
-      display: inline-block;
-      margin-top: 10px;
-      background: #555;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: background 0.2s ease;
-    }
-
-    .open-btn:hover {
-      background: #000;
+    .pdf-container embed {
+      width: 100%;
+      min-height: 600px; /* PDF 전체 높이를 어느 정도 확보 */
     }
   </style>
 </head>
 <body>
-  <header>모바일에서는 '새 탭에서 열기'를 눌러야 가장 안정적으로 보입니다 :)</header>
 
   <div class="gallery">
     <section>
       <h2>2025 가을호 [소도마을 다이어리]</h2>
-      <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=pdfs/issue01.pdf"></iframe>
-      <a class="open-btn" href="pdfs/issue01.pdf" target="_blank">새 탭에서 열기</a>
+      <div class="pdf-container">
+        <embed src="pdfs/issue01.pdf" type="application/pdf">
+      </div>
     </section>
 
     <section>
       <h2>2025 봄호 [이찬희는 지금도 계속]</h2>
-      <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=pdfs/issue02.pdf"></iframe>
-      <a class="open-btn" href="pdfs/issue02.pdf" target="_blank">새 탭에서 열기</a>
+      <div class="pdf-container">
+        <embed src="pdfs/issue02.pdf" type="application/pdf">
+      </div>
     </section>
 
     <section>
       <h2>2025 여름호 [숨 참는 사이]</h2>
-      <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=pdfs/issue03.pdf"></iframe>
-      <a class="open-btn" href="pdfs/issue03.pdf" target="_blank">새 탭에서 열기</a>
+      <div class="pdf-container">
+        <embed src="pdfs/issue03.pdf" type="application/pdf">
+      </div>
     </section>
 
     <section>
       <h2>2024 여름호 [One sip of Lazy Vision]</h2>
-      <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=pdfs/issue04.pdf"></iframe>
-      <a class="open-btn" href="pdfs/issue04.pdf" target="_blank">새 탭에서 열기</a>
+      <div class="pdf-container">
+        <embed src="pdfs/issue04.pdf" type="application/pdf">
+      </div>
     </section>
 
     <section>
       <h2>2024 봄호 [폭신한 상상의 별, 니도이]</h2>
-      <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=pdfs/issue05.pdf"></iframe>
-      <a class="open-btn" href="pdfs/issue05.pdf" target="_blank">새 탭에서 열기</a>
+      <div class="pdf-container">
+        <embed src="pdfs/issue05.pdf" type="application/pdf">
+      </div>
     </section>
 
     <section>
       <h2>2023 가을호 [아프로의 유진]</h2>
-      <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=pdfs/issue06.pdf"></iframe>
-      <a class="open-btn" href="pdfs/issue06.pdf" target="_blank">새 탭에서 열기</a>
+      <div class="pdf-container">
+        <embed src="pdfs/issue06.pdf" type="application/pdf">
+      </div>
     </section>
 
     <section>
       <h2>2023 여름호 [다섯, 다감하고 서슴없이]</h2>
-      <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=pdfs/issue07.pdf"></iframe>
-      <a class="open-btn" href="pdfs/issue07.pdf" target="_blank">새 탭에서 열기</a>
+      <div class="pdf-container">
+        <embed src="pdfs/issue07.pdf" type="application/pdf">
+      </div>
     </section>
 
     <section>
       <h2>2023 봄호 [Write your [   ]]</h2>
-      <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=pdfs/issue08.pdf"></iframe>
-      <a class="open-btn" href="pdfs/issue08.pdf" target="_blank">새 탭에서 열기</a>
+      <div class="pdf-container">
+        <embed src="pdfs/issue08.pdf" type="application/pdf">
+      </div>
     </section>
   </div>
+
 </body>
 </html>
