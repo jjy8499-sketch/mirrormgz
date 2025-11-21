@@ -8,104 +8,206 @@
     body {
       font-family: 'Noto Sans KR', sans-serif;
       background-color: #f9f9f9;
+      color: #333;
       margin: 0;
       padding: 0;
     }
 
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 0 60px;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 30px;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      padding: 24px;
+      box-sizing: border-box;
     }
 
     section {
-      margin-bottom: 50px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 16px;
+      text-align: center;
     }
 
     h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
     }
 
     .pdf-container {
       width: 100%;
-      height: 550px;
-      border: 1px solid #ddd;
+      height: 400px;
+      overflow: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
       background: #fff;
-      margin-bottom: 10px;
+      position: relative;
     }
 
-    .pdf-container embed {
+    /* object/embed 모두 높이 100%로 채움 */
+    .pdf-container object,
+    .pdf-container embed,
+    .pdf-container iframe {
       width: 100%;
       height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* 미리보기 불가할 때 표시되는 안내박스 (fallback) */
+    .fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      gap: 8px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      text-align: center;
+      color: #666;
+      font-size: 0.95rem;
     }
 
     .open-btn {
       display: inline-block;
-      margin-top: 5px;
-      background: #000;
-      color: #fff;
-      padding: 8px 14px;
+      margin-top: 8px;
+      color: #007bff;
       text-decoration: none;
-      font-size: 14px;
-      border-radius: 4px;
+      font-size: 0.95rem;
     }
 
     footer {
       text-align: center;
-      font-size: 12px;
+      padding: 20px 0;
+      font-size: 0.8rem;
       color: #666;
-      padding: 20px 0 40px;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
-    <h1>Magazine MIRROR</h1>
+  <div class="gallery">
+    <section>
+      <h2>2025 가을호 [소도마을 다이어리]</h2>
+      <div class="pdf-container">
+        <!-- object 사용: 호환성 높임. 내부에 embed/fallback 포함 -->
+        <object data="pdfs/issue01.pdf" type="application/pdf">
+          <embed src="pdfs/issue01.pdf" type="application/pdf">
+          </embed>
+          <div class="fallback">
+            <div>이 브라우저에서는 섹션 내 PDF 미리보기를 지원하지 않습니다.</div>
+            <a class="open-btn" href="pdfs/issue01.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+          </div>
+        </object>
+      </div>
+      <a class="open-btn" href="pdfs/issue01.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+    </section>
 
     <section>
-      <h2>2025 겨울호 [One sip of Lazy Vision]</h2>
+      <h2>2025 봄호 [이찬희는 지금도 계속]</h2>
       <div class="pdf-container">
-        <embed src="pdfs/issue04.pdf" type="application/pdf">
+        <object data="pdfs/issue02.pdf" type="application/pdf">
+          <embed src="pdfs/issue02.pdf" type="application/pdf"></embed>
+          <div class="fallback">
+            <div>이 브라우저에서는 섹션 내 PDF 미리보기를 지원하지 않습니다.</div>
+            <a class="open-btn" href="pdfs/issue02.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+          </div>
+        </object>
       </div>
-      <a class="open-btn" href="pdfs/issue04.pdf" target="_blank">새 탭에서 열기</a>
+      <a class="open-btn" href="pdfs/issue02.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+    </section>
+
+    <section>
+      <h2>2025 여름호 [숨 참는 사이]</h2>
+      <div class="pdf-container">
+        <object data="pdfs/issue03.pdf" type="application/pdf">
+          <embed src="pdfs/issue03.pdf" type="application/pdf"></embed>
+          <div class="fallback">
+            <div>이 브라우저에서는 섹션 내 PDF 미리보기를 지원하지 않습니다.</div>
+            <a class="open-btn" href="pdfs/issue03.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+          </div>
+        </object>
+      </div>
+      <a class="open-btn" href="pdfs/issue03.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+    </section>
+
+    <section>
+      <h2>2024 여름름호 [One sip of Lazy Vision]</h2>
+      <div class="pdf-container">
+        <object data="pdfs/issue04.pdf" type="application/pdf">
+          <embed src="pdfs/issue04.pdf" type="application/pdf"></embed>
+          <div class="fallback">
+            <div>이 브라우저에서는 섹션 내 PDF 미리보기를 지원하지 않습니다.</div>
+            <a class="open-btn" href="pdfs/issue04.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+          </div>
+        </object>
+      </div>
+      <a class="open-btn" href="pdfs/issue04.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
     </section>
 
     <section>
       <h2>2024 봄호 [폭신한 상상의 별, 니도이]</h2>
       <div class="pdf-container">
-        <embed src="pdfs/issue05.pdf" type="application/pdf">
+        <object data="pdfs/issue05.pdf" type="application/pdf">
+          <embed src="pdfs/issue05.pdf" type="application/pdf"></embed>
+          <div class="fallback">
+            <div>이 브라우저에서는 섹션 내 PDF 미리보기를 지원하지 않습니다.</div>
+            <a class="open-btn" href="pdfs/issue05.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+          </div>
+        </object>
       </div>
-      <a class="open-btn" href="pdfs/issue05.pdf" target="_blank">새 탭에서 열기</a>
+      <a class="open-btn" href="pdfs/issue05.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
     </section>
 
     <section>
       <h2>2023 가을호 [아프로의 유진]</h2>
       <div class="pdf-container">
-        <embed src="pdfs/issue06.pdf" type="application/pdf">
+        <object data="pdfs/issue06.pdf" type="application/pdf">
+          <embed src="pdfs/issue06.pdf" type="application/pdf"></embed>
+          <div class="fallback">
+            <div>이 브라우저에서는 섹션 내 PDF 미리보기를 지원하지 않습니다.</div>
+            <a class="open-btn" href="pdfs/issue06.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+          </div>
+        </object>
       </div>
-      <a class="open-btn" href="pdfs/issue06.pdf" target="_blank">새 탭에서 열기</a>
+      <a class="open-btn" href="pdfs/issue06.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
     </section>
 
     <section>
       <h2>2023 여름호 [다섯, 다감하고 서슴없이]</h2>
       <div class="pdf-container">
-        <embed src="pdfs/issue07.pdf" type="application/pdf">
+        <object data="pdfs/issue07.pdf" type="application/pdf">
+          <embed src="pdfs/issue07.pdf" type="application/pdf"></embed>
+          <div class="fallback">
+            <div>이 브라우저에서는 섹션 내 PDF 미리보기를 지원하지 않습니다.</div>
+            <a class="open-btn" href="pdfs/issue07.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+          </div>
+        </object>
       </div>
-      <a class="open-btn" href="pdfs/issue07.pdf" target="_blank">새 탭에서 열기</a>
+      <a class="open-btn" href="pdfs/issue07.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
     </section>
 
     <section>
       <h2>2023 봄호 [Write your [   ]]</h2>
       <div class="pdf-container">
-        <embed src="pdfs/issue08.pdf" type="application/pdf">
+        <object data="pdfs/issue08.pdf" type="application/pdf">
+          <embed src="pdfs/issue08.pdf" type="application/pdf"></embed>
+          <div class="fallback">
+            <div>이 브라우저에서는 섹션 내 PDF 미리보기를 지원하지 않습니다.</div>
+            <a class="open-btn" href="pdfs/issue08.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+          </div>
+        </object>
       </div>
-      <a class="open-btn"
+      <a class="open-btn" href="pdfs/issue08.pdf" target="_blank" rel="noopener">새 탭에서 열기</a>
+    </section>
+  </div>
+
+  <!-- 하단 저작권 문구 -->
+  <footer>
+    Copyright 2025 Magazine MIRROR All rights reserved.
+  </footer>
+
+</body>
+</html>
